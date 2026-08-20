@@ -160,6 +160,7 @@ export function retention(
 
     if (target > new Date()) return;
     eligible++;
+    console.log(signup, eligible)
 
     const targetKey = target.toISOString().slice(0, 10);
     if (openedByUser.get(signup.user_id)?.has(targetKey)) retained++;

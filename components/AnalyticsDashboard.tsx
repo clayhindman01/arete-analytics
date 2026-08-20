@@ -48,7 +48,7 @@ export default function AnalyticsDashboard() {
 
     const onboarding = uniqueUsersForEvent(events, "onboarding_completed");
     const plans = uniqueUsersForEvent(events, "plan_generated");
-    const checkins = uniqueUsersForEvent(events, "daily_checkin_completed");
+    const checkins = uniqueUsersForEvent(events, "daily_check_in_completed");
 
     const todayKey = new Date().toISOString().slice(0, 10);
     const weekStart = new Date();
@@ -85,7 +85,7 @@ export default function AnalyticsDashboard() {
 
   const activeSeries = dailySeries(events, "app_opened", range);
   const planSeries = eventDailyCount(events, "daily_plan_completed", range);
-  const checkinSeries = eventDailyCount(events, "daily_checkin_completed", range);
+  const checkinSeries = eventDailyCount(events, "daily_check_in_completed", range);
   const adherence = adherenceSeries(events, range);
 
   const enabled = (id: string) =>
@@ -277,7 +277,7 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=...`}</pre>
                 "daily_plan_viewed",
                 "task_completed",
                 "daily_plan_completed",
-                "daily_checkin_completed",
+                "daily_check_in_completed",
                 "weekly_checkin_completed",
                 "notification_opened",
                 "trial_started",
